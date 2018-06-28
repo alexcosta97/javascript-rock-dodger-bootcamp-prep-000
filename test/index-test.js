@@ -125,7 +125,12 @@ describe('Rock Dodger', () => {
     it('clears gameInterval', () => {
       const spy = expect.spyOn(window, 'clearInterval')
 
-      endGame()
+      endGame = cb => {
+          if (!called) {
+            called = true
+            cb()
+          }
+        }
 
       expect(spy).toHaveBeenCalled()
     })
