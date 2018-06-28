@@ -111,7 +111,7 @@ function endGame() {
   clearInterval(gameInterval);
   for(var i = 0; i < ROCKS.length; i++)
   {
-    ROCKS.pop();
+    ROCKS[i].remove();
   }
   window.removeEventListener('keydown', moveDodger);
   alert('YOU LOSE!');
